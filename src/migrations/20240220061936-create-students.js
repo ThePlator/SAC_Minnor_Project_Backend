@@ -35,24 +35,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       matriculation_passing_year: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       matriculation_percentage: {
-        type: Sequelize.FLOAT
+        type: Sequelize.STRING
       },
       matriculation_board: {
         type: Sequelize.STRING
       },
       intermediate_passing_year: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       intermediate_percentage: {
-        type: Sequelize.FLOAT
+        type: Sequelize.STRING
       },
       intermediate_board: {
         type: Sequelize.STRING
       },
-      Achievements: {
+      achievement: {
         type: Sequelize.STRING
       },
       createdAt: {

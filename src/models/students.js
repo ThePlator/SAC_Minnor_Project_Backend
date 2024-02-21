@@ -22,13 +22,13 @@ module.exports = (sequelize, DataTypes) => {
     linkedin_profile: DataTypes.STRING,
     resume_link: DataTypes.STRING,
     internship_place: DataTypes.STRING,
-    matriculation_passing_year: DataTypes.INTEGER,
-    matriculation_percentage: DataTypes.FLOAT,
+    matriculation_passing_year: DataTypes.STRING,
+    matriculation_percentage: DataTypes.STRING,
     matriculation_board: DataTypes.STRING,
-    intermediate_passing_year: DataTypes.INTEGER,
-    intermediate_percentage: DataTypes.FLOAT,
+    intermediate_passing_year: DataTypes.STRING,
+    intermediate_percentage: DataTypes.STRING,
     intermediate_board: DataTypes.STRING,
-    Achievements: DataTypes.STRING
+    achievement: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Students',

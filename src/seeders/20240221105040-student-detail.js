@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     
-      await queryInterface.bulkInsert('People', [
+      await queryInterface.bulkInsert('Students', [
         {
           name: "Hemant Raj",
           department: "ECE",
@@ -18,7 +18,9 @@ module.exports = {
           matriculation_board: "",
           intermediate_passing_year: "",
           intermediate_board: "",
-          achievement: ""
+          achievement: "",
+          createdAt: new Date(),
+          updatedAt: new Date()
       },
       {
         name: 'Khushi',
@@ -33,7 +35,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Sagar Kumar',
@@ -48,7 +52,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2019',
         intermediate_board: 'CBSE',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Suman Shradha',
@@ -63,7 +69,9 @@ module.exports = {
         matriculation_board: 'BSEB',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Pawan Kumar',
@@ -78,7 +86,9 @@ module.exports = {
         matriculation_board: 'Central Board of Secondary Education, Delhi',
         intermediate_passing_year: '2021',
         intermediate_board: 'Government Polytechnic Madhepura, Madhepura',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'SHASHWAT',
@@ -93,7 +103,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: 'WINNER OF BADMINTION PRATISPARDHA 2024'
+        achievement: 'WINNER OF BADMINTION PRATISPARDHA 2024',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Neeraj Kumar',
@@ -108,7 +120,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB PATNA',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Nishant Kumar',
@@ -123,7 +137,9 @@ module.exports = {
         matriculation_board: 'Cbse',
         intermediate_passing_year: '2019',
         intermediate_board: 'Bseb',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Amandeep',
@@ -138,7 +154,9 @@ module.exports = {
         matriculation_board: '',
         intermediate_passing_year: '',
         intermediate_board: '',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Rituparno Ghosh',
@@ -153,7 +171,9 @@ module.exports = {
         matriculation_board: 'ICSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: '-NONE-'
+        achievement: '-NONE-',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Shivam Kumar',
@@ -168,7 +188,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'SUMAN KUMAR',
@@ -183,7 +205,9 @@ module.exports = {
         matriculation_board: 'BSEB, PATNA',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB, PATNA',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Prince Kumar',
@@ -198,7 +222,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: 'Share market analyst (mentioned in resume)\nCrypto-currency trading'
+        achievement: 'Share market analyst (mentioned in resume)\nCrypto-currency trading',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'RAHUL RAJ',
@@ -213,7 +239,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Sanjana Kumari',
@@ -228,7 +256,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '',
         intermediate_board: '',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Vaishali',
@@ -243,7 +273,9 @@ module.exports = {
         matriculation_board: 'ICSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Asmat Najreen',
@@ -258,7 +290,9 @@ module.exports = {
         matriculation_board: 'BSEB',
         intermediate_passing_year: '2019',
         intermediate_board: 'CBSE',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Raushan Kumar',
@@ -273,7 +307,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Rajeev Kumar',
@@ -288,7 +324,9 @@ module.exports = {
         matriculation_board: 'BSEB, Patna',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB Patna',
-        achievement: 'Typing...'
+        achievement: 'Typing...',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'SONAM RAJ',
@@ -303,7 +341,9 @@ module.exports = {
         matriculation_board: 'BSEB PATNA',
         intermediate_passing_year: '2021',
         intermediate_board: 'Government polytechnic muzaffarpur',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'GYANI KUMAR',
@@ -318,7 +358,9 @@ module.exports = {
         matriculation_board: 'GYANI KUMAR',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Ravi Raj Singh',
@@ -333,7 +375,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Vishal kumar',
@@ -348,7 +392,9 @@ module.exports = {
         matriculation_board: 'BSES',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB',
-        achievement: 'Successfully worked on 10+ freelancing project , and also Successfully done 5 internship, as a frontend or fullstack developer'
+        achievement: 'Successfully worked on 10+ freelancing project , and also Successfully done 5 internship, as a frontend or fullstack developer',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Neha Kumari',
@@ -363,7 +409,9 @@ module.exports = {
         matriculation_board: 'Bihar School Examination Board, Patna',
         intermediate_passing_year: '2021',
         intermediate_board: 'State Board of technical education, Bihar',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Laxmi Kumari',
@@ -378,7 +426,9 @@ module.exports = {
         matriculation_board: 'BSEB, Patna',
         intermediate_passing_year: '2020',
         intermediate_board: 'BSEB, Patna',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Juli kumari',
@@ -393,7 +443,9 @@ module.exports = {
         matriculation_board: 'BSEB, PATNA',
         intermediate_passing_year: '2021',
         intermediate_board: 'SBTE, PATNA',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'MD AFFANUR RAHMAN',
@@ -408,7 +460,9 @@ module.exports = {
         matriculation_board: 'Central Board of Secondary Education (CBSE)',
         intermediate_passing_year: '2019',
         intermediate_board: 'Central Board of Secondary Education (CBSE)',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'MD WASIM AKRAM',
@@ -423,7 +477,9 @@ module.exports = {
         matriculation_board: 'BSEB',
         intermediate_passing_year: '2018',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Ekta Kumari',
@@ -438,7 +494,9 @@ module.exports = {
         matriculation_board: 'BSEB Patna',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB Patna',
-        achievement: '70%'
+        achievement: '70%',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Gunja',
@@ -453,7 +511,9 @@ module.exports = {
         matriculation_board: 'BSEB',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB',
-        achievement: 'STUDENT COORDINATOR AND STUDENT VOLUNTEER\n\nVICE CAPTAIN OF GULLY CRICKET (GIRLS) DURING SPORTS FEST 2023 & 2024 AND LED MY TEAM TO VICTORY\n\nMEMBER OF VOLLEYBALL, TUG OF WAR, CARROM, BADMINTON DURING SPORTS FEST 2023 & 2024\n\nhttps://www.instagram.com/_theartinsider?igsh=MXMzNHhyeXhiZThucQ==\nSmall business as well as art page.'
+        achievement: 'STUDENT COORDINATOR AND STUDENT VOLUNTEER\n\nVICE CAPTAIN OF GULLY CRICKET (GIRLS) DURING SPORTS FEST 2023 & 2024 AND LED MY TEAM TO VICTORY\n',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Aparna Gupta',
@@ -468,7 +528,9 @@ module.exports = {
         matriculation_board: 'CBSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: 'Won 1st prize in Photography competition on the occasion of Independence day(2023) in PCE, Purnea\n\nSTUDENT COORDINATOR AND STUDENT VOLUNTEER\n\nCAPTAIN OF GULLY CRICKET TEAM (GIRLS) DURING INTRA AND INTER LEVEL COLLEGE SPORTS FEST HELD IN 2023 & 2024 AND LED MY TEAM TO VICTORY\n\nMEMBER OF VOLLEYBALL, TUG OF WAR, CARROM, BADMINTON DURING SPORTS FEST 2023 & 2024\n'
+        achievement: 'Won 1st prize in Photography competition on the occasion of Independence day(2023) in PCE, \n',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'KHUSHI KUMARI',
@@ -483,7 +545,9 @@ module.exports = {
         matriculation_board: 'BSEB',
         intermediate_passing_year: '2019',
         intermediate_board: 'BSEB',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Riya Raj',
@@ -498,7 +562,9 @@ module.exports = {
         matriculation_board: 'ICSE',
         intermediate_passing_year: '2020',
         intermediate_board: 'CBSE',
-        achievement: 'Best Player in SPARDHA 1.0\n(Shotput,High Jump,Long Jump)'
+        achievement: 'Best Player in SPARDHA 1.0\n(Shotput,High Jump,Long Jump)',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Vivek Kumar',
@@ -513,7 +579,9 @@ module.exports = {
         matriculation_board: 'Cbse',
         intermediate_passing_year: '',
         intermediate_board: 'Bseb',
-        achievement: ''
+        achievement: '',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
         
          
