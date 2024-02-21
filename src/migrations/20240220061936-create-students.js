@@ -3,6 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Students', {
+    
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +13,9 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-
+      name: {
+        type: Sequelize.STRING
+      },
       department: {
         type: Sequelize.STRING
       },
@@ -59,7 +62,8 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+     
     });
   },
   async down(queryInterface, Sequelize) {
