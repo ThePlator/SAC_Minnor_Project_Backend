@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const StudentController = require('../../controllers/studentController');
-const csvService = require('../../services/csvService'); // Import csvService
+const StudentController = require('../../controllers/student-controller');
+const csvService = require('../../services/csv-services'); // Import csvService
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

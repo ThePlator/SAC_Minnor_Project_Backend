@@ -1,5 +1,5 @@
-const StudentService = require('../services/student-service');
-const csvService = require('../../services/csvService');
+const StudentService = require('../services/students-service');
+const csvService = require('../services/csv-services');
 
 const studentService = new StudentService();
 

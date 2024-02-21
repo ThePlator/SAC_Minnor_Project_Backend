@@ -1,7 +1,7 @@
 // services/studentService.js
 
 const StudentRepository = require('../repository/student-repository');
-const csvService = require('./csvService');
+const csvService = require('./csv-services');
 const { Student } = require('../models/index');
 
 class StudentService {
