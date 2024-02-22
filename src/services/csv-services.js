@@ -1,40 +1,46 @@
-// services/csvService.js
-
-const fs = require('fs');
 const csv = require('csv-parser');
+const fs = require('fs');
+const { Students } = require('../models/index');
 
-class CsvService {
-    async parseCsvFile(filePath) {
-        return new Promise((resolve, reject) => {
-            const data = [];
-            fs.createReadStream(filePath)
-                .pipe(csv())
-                .on('data', (row) => {
-                    data.push({
-                        name: row['Name'],
-                        department: row['Department'],
-                        registration_number: row['Registration Number'],
-                        roll_number: row['Roll Number'],
-                        linkedin_profile: row['Linkedin Profile Link'],
-                        resume_link: row['Resume'],
-                        internship_place: row['Internship organization'],
-                        matriculation_passing_year: row['Matriculation Passing Year'],
-                        matriculation_percentage: row['Percentage/CGPA in Matriculation'],
-                        matriculation_board: row['Name of Matriculation Board'],
-                        intermediate_passing_year: row['Intermediate/Diploma Passing Year'],
-                        intermediate_percentage: row['Percentage/CGPA in Intermediate Board/Diploma College'],
-                        intermediate_board: row['Name of Intermediate Board/Diploma College'],
-                        achievement: row['Achievements and remarks (from any field and duration).'],
-                    });
-                })
-                .on('end', () => {
-                    resolve(data);
-                })
-                .on('error', (error) => {
+async function parseCsvFile(filePath) {
+    const students = [];
+    return new Promise((resolve, reject) => {
+        fs.createReadStream(filePath)
+            .pipe(csv())
+            .on('data', async (row) => {
+                const student = {
+                    name: row.Name,
+                    email: row.Username,
+                    department: row.Department,
+                    registrationNumber: row['Registration Number'],
+                    rollNumber: row['Roll Number'],
+                    linkedinProfile: row['Linkedin Profile Link'],
+                    resume: row.Resume,
+                    internshipOrganization: row['Internship organization'],
+                    matriculationBoard: row['Name of Matriculation Board'],
+                    matriculationPassingYear: row['Matriculation Passing Year'],
+                    matriculationPercentage: row['Percentage/CGPA in Matriculation'],
+                    intermediateBoard: row['Name of Intermediate Board/Diploma College'],
+                    intermediatePercentage: row['Percentage/CGPA in  Intermediate Board/Diploma College'],
+                    intermediatePassingYear: row['Intermediate/Diploma Passing Year'],
+                    achievement: row['Achievements and remarks (from any field and duration).']
+                };
+                students.push(student);
+            })
+            .on('end', async () => {
+                try {
+                    const createdStudents = await Students.bulkCreate(students);
+                    resolve(createdStudents);
+                } catch (error) {
                     reject(error);
-                });
-        });
-    }
+                }
+            })
+            .on('error', (error) => {
+                reject(error);
+            });
+    });
 }
 
-module.exports = new CsvService();
+module.exports = {
+    parseCsvFile
+};

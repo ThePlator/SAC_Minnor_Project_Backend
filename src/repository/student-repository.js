@@ -12,6 +12,15 @@ class StudentRepository {
             throw { error };
         }
     }
+    async getAllStudents() {
+        try {
+            const students = await Students.findAll();
+            return students;
+        } catch (error) {
+            console.log("Something went wrong in the repository layer");
+            throw { error };
+        }
+    }
 
     async deleteStudentById(studentId) {
         try {
@@ -26,7 +35,7 @@ class StudentRepository {
 
     async bulkCreateStudents(students) {
         try {
-            const createdStudents = await Students.bulkCreate(students);
+            const createdStudents = await Students.bulkCreateStudents(students);
             return createdStudents;
         } catch (error) {
             console.log("Something went wrong in the repository layer");

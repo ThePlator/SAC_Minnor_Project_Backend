@@ -9,21 +9,31 @@ class StudentService {
         this.studentRepository = new StudentRepository();
     }
 
-    async importStudentsFromCsv(filePath) {
+  
+  async  bulkCreateStudents(filePath) {
+    try {
+        const students = await csvService.parseCsvFile(filePath);
+        const createdStudents = await studentRepository.bulkCreateStudents(students);
+        return createdStudents;
+    } catch (error) {
+        console.error('Error importing students from CSV:', error);
+        throw error;
+    }
+}
+
+    async getStudent(students) {
         try {
-            const students = await csvService.parseCsvFile(filePath);
-            const createdStudents = await this.studentRepository.bulkCreateStudents(students);
-            return createdStudents;
+            const student = await this.studentRepository.getStudent(students);
+            return student;
         } catch (error) {
-            console.error('Error importing students from CSV:', error);
+            console.log("Something went wrong in the service layer");
             throw error;
         }
     }
-
-    async getStudent(studentId) {
+    async getAllStudents(data) {
         try {
-            const student = await this.studentRepository.getStudent(studentId);
-            return student;
+            const students = await this.studentRepository.getAllStudents(data);
+            return students;
         } catch (error) {
             console.log("Something went wrong in the service layer");
             throw error;

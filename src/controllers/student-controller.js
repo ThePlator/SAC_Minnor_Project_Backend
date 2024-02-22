@@ -1,6 +1,7 @@
 const StudentService = require('../services/students-service');
 const csvService = require('../services/csv-services');
 
+
 const studentService = new StudentService();
 
 const get = async (req, res) => {
@@ -37,25 +38,62 @@ const destroy = async (req, res) => {
     }
 };
 
+
+// controllers/student-controller.js
+// controllers/student-controller.js
+
+
 const bulkCreate = async (req, res) => {
     try {
-        const filePath = req.file.path; // Assuming you are using multer for file upload
-        await studentService.importStudentsFromCsv(filePath);
-        return res.status(200).json({ message: 'Students imported successfully' });
-    } catch (error) {
-        console.error('Error importing students:', error);
-        let status = 500;
-        let message = 'Internal Server Error';
-        if (error.code === 'E_FILE_FORMAT') {
-            status = 400;
-            message = 'Invalid file format. Please upload a CSV file.';
+        console.log('Request file:', req.file);
+        if (!req.file || !req.file.path) {
+            throw new Error('File path is missing');
         }
-        return res.status(status).json({ message });
+        const filePath = req.file.path;
+        console.log('File path:', filePath);
+        const csvData = await csvService.parseCsvFile(filePath);
+        const studentData = csvData.slice(1); // Exclude header row
+        await StudentController.bulkCreate(studentData);
+        res.status(200).json({ message: 'File uploaded and processed successfully' });
+    } catch (error) {
+        console.error('Error creating students:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 };
+
+
+
+
+
+
+
+const getAll = async (req, res) => {
+    try {
+        const students = await studentService.getAllStudents(req.query);
+        return res.status(200).json({
+            data: students,
+            success: true,
+            message: 'Successfully fetched all students',
+            error: null
+        });
+    } catch (error) {
+        console.error("Something went wrong in the controller layer");
+        return res.status(500).json({
+            data: null,
+            success: false,
+            message: 'Failed to fetch all students',
+            error: error.message
+        });
+    }
+};
+
+
+
+
 
 module.exports = {
     get,
     destroy,
-    bulkCreate
+    bulkCreate,
+    getAll
 };
