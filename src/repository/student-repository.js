@@ -1,20 +1,21 @@
 // repositories/studentRepository.js
 
-const { Students } = require('../models/index');
+const Student = require('../models/students');
 
 class StudentRepository {
-    async getStudent(studentId) {
+    async getStudent(id) {
         try {
-            const student = await Students.findByPk(studentId);
+            const student = await Student.findById(id);
             return student;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
             throw { error };
         }
     }
-    async getAllStudents() {
+    
+    async  getAllStudents() {
         try {
-            const students = await Students.findAll();
+            const students = await Student.find();
             return students;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
@@ -22,26 +23,6 @@ class StudentRepository {
         }
     }
 
-    async deleteStudentById(studentId) {
-        try {
-            const result = await Students.destroy({ where: { id: studentId } });
-            return result > 0 ? { message: 'Student deleted successfully' } : { message: 'Student not found' };
-        } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw { error };
-        }
-    }
-    
-
-    async bulkCreateStudents(students) {
-        try {
-            const createdStudents = await Students.bulkCreateStudents(students);
-            return createdStudents;
-        } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw { error };
-        }
-    }
 }
 
 module.exports = StudentRepository;

@@ -1,33 +1,20 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const connect = require('./config/database');
+const { PORT } = require('./config/server-config');
+const apiRoutes = require('./routes/index');
 
-const {PORT} = require('./config/server-config');
-const ApiRoutes = require('./routes/index');
-// const db = require('./models/index');
-// Multer configuration
-// const StudentController = require('./controllers/student-controller');
-
-
-
-const setupAndStartServer = () =>{
-
+const setupAndStartServer = () => {
     const app = express();
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended: true}))
-   
-   
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
 
-    app.use('/api',ApiRoutes);
+    app.use('/api', apiRoutes);
 
-    app.listen(PORT, async()=>{
-        // if(process.env.SYNC_DB){
-        //     db.sequelize.sync({alter: true});
-        // }
-        console.log(`server started at ${PORT}`);
-        
+    app.listen(PORT, async () => {
+        console.log(`Server started at ${PORT}`);
+        await connect();
+        console.log('MongoDB connected');
     });
 }
 
-
 setupAndStartServer();
-
