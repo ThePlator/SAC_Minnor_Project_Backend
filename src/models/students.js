@@ -19,6 +19,6 @@ const studentSchema = new mongoose.Schema({
     intermediatePercentage: { type: Number}
 });
 
-const Student = mongoose.model('Student', studentSchema);
+const Students = mongoose.model('Student', studentSchema);
 
-module.exports = Student;
+module.exports = Students;
