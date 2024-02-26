@@ -10,7 +10,10 @@ const setupAndStartServer = () => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.use(cors({
-        origin: 'https://sacc-minor-project.vercel.app'
+        origin: 'https://sacc-minor-project.vercel.app',
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type"],
+        credentials: true,
       }));
       
     app.use('/api', apiRoutes);
